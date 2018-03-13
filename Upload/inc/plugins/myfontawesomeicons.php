@@ -3,13 +3,13 @@
  * MyBB: MyFontAwesomeIcons
  *
  * File: myfontawesomeicons.php
- * 
+ *
  * Authors: Ethan DeLong & Vintagedaddyo
  *
  * MyBB Version: 1.8
  *
  * Plugin Version: 1.0
- * 
+ *
  */
 
 // Disallow direct access to this file for security reasons
@@ -18,24 +18,24 @@ if(!defined("IN_MYBB"))
 {
     die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
 }
-	 
+
 	// Admin settings injection
 	$plugins->add_hook("admin_formcontainer_output_row", "myfontawesomeicons_admin_settings");
 	$plugins->add_hook("admin_forum_management_add_commit", "myfontawesomeicons_admin_settings_save");
 	$plugins->add_hook("admin_forum_management_edit", "myfontawesomeicons_admin_settings_save");
-	
+
 	// Inject creation of forum row.
 	$plugins->add_hook("build_forumbits_forum", "myfontawesomeicons_display_icons");
-	
-	
+
+
 	function myfontawesomeicons_info()
     {
     global $lang;
 
     $lang->load("forum_management_myfontawesomeicons");
-    
+
     $lang->myfontawesomeicons_Desc = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="float:right;">' .
-        '<input type="hidden" name="cmd" value="_s-xclick">' . 
+        '<input type="hidden" name="cmd" value="_s-xclick">' .
         '<input type="hidden" name="hosted_button_id" value="AZE6ZNZPBPVUL">' .
         '<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">' .
         '<img alt="" border="0" src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" width="1" height="1">' .
@@ -51,19 +51,19 @@ if(!defined("IN_MYBB"))
         'compatibility' => $lang->myfontawesomeicons_Compat
     );
     }
-	
+
 	function myfontawesomeicons_install()
 	{
 		global $db;
 		$db->add_column('forums', 'myfontawesomeicons_icon', 'TEXT NOT NULL');
 	}
-	
+
 	function myfontawesomeicons_is_installed()
 	{
 		global $db;
 		return $db->field_exists('myfontawesomeicons_icon', 'forums');
 	}
-	
+
 	function myfontawesomeicons_uninstall()
 	{
 		global $db;
@@ -172,7 +172,7 @@ if(!defined("IN_MYBB"))
         $old2 = "<div title=\"{$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
         find_replace_templatesets("forumbit_depth3_statusicon", "#".preg_quote($old2)."#i", "$new2");
         find_replace_templatesets("headerinclude", '#<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\">(\r?)\n#', "", 0);
-    
+
 
         $old3 = "{$boardstats}
 
@@ -192,7 +192,7 @@ if(!defined("IN_MYBB"))
 <br class=\"clear\" />";
 
         $new3 = "{$boardstats}
-        
+
 <dl class=\"forum_legend smalltext\">
 	<dt><span class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"></span></dt>
 	<dd>{\$lang->new_posts}</dd>
@@ -218,28 +218,28 @@ if(!defined("IN_MYBB"))
     {
         require_once MYBB_ADMIN_DIR.'inc/functions_themes.php';
         update_theme_stylesheet_list($theme['tid']);
-    } 
+    }
 
     }
 
-	
+
 	function myfontawesomeicons_display_icons($forum)
 	{
 		global $theme;
 		if(!empty($forum['myfontawesomeicons_icon']))
 		{
 			$icon_path = str_replace("{theme}", $theme['imgdir'], $forum['myfontawesomeicons_icon']);
-			$forum['myfontawesomeicon'] = "fa {$icon_path}";
+			$forum['myfontawesomeicon'] = htmlspecialchars_uni("fa {$icon_path}");
 		}
 		return $forum;
 	}
-    
 
-	
+
+
 	function myfontawesomeicons_admin_settings(&$pluginargs)
 	{
 		global $form, $form_container, $forum_data, $lang, $mybb;
-		
+
 		if($mybb->input['module'] == 'forum-management')
 		{
 			if($pluginargs['title'] == $lang->display_order)
@@ -249,11 +249,11 @@ if(!defined("IN_MYBB"))
 			}
 		}
 	}
-	
+
 	function myfontawesomeicons_admin_settings_save()
 	{
 		global $db, $fid, $mybb;
-		
+
 		if($mybb->request_method == "post")
 		{
 			$db->update_query("forums", array("myfontawesomeicons_icon" => $db->escape_string($mybb->input['myfontawesomeicons_icon'])), "fid='{$fid}'");
