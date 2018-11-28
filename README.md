@@ -20,7 +20,11 @@ You can specify a css name to your forum's custom font-awesome icon by going to 
 localization support:
 
 -english 
+
 -englishgb
+
 -espanol
+
 -french
+
 -italiano
