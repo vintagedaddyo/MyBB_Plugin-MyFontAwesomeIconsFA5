@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.0
+ * Plugin Version: 1.1
  *
  */
 
@@ -92,8 +92,8 @@ if(!defined("IN_MYBB"))
 	<dt><span class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"></span></dt>
 	<dd>{\$lang->no_new_posts}</dd>
 
-	<dt><span class=\"forum_status forum_offlock\" title=\"{\$lang->forum_locked}\"></span></dt>
-	<dd>{\$lang->forum_locked}</dd>
+	<dt><span class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"></span></dt>
+	<dd>{\$lang->forum_closed}</dd>
 
 	<dt><span class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"></span></dt>
 	<dd>{\$lang->forum_redirect}</dd>
@@ -109,8 +109,8 @@ if(!defined("IN_MYBB"))
     <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
     <dd>{\$lang->no_new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_offlock\" title=\"{\$lang->forum_locked}\"><i class=\"fa fa-lock\"></i></div></dt>
-    <dd>{\$lang->forum_locked}</dd>
+    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fa fa-lock\"></i></div></dt>
+    <dd>{\$lang->forum_closed}</dd>
 
     <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fa fa-link\"></i></div></dt>
     <dd>{\$lang->forum_redirect}</dd>
@@ -126,15 +126,15 @@ if(!defined("IN_MYBB"))
 .forum_status i {display: inline-block !important;line-height: 50px !important;}
 .forum_on {color: #0094d1 !important;}
 .forum_on i
-.forum_off, .forum_offlock, .forum_offlink {color: #333 !important;}
+.forum_off, .forum_offclose, .forum_offlink {color: #333 !important;}
 .forum_off i {opacity: .4 !important;}
-/*.forum_offlock i:before {content: "";}*/
+/*.forum_offclose i:before {content: "";}*/
 /*.forum_offlink i:before {content: "";}*/
 .subforumicon {background: none !important; height: 10px !important;width: 10px !important;display: inline-block !important;margin: 0 5px !important;}
 .subforum_minion {color: #0094d1 !important;}
-.subforum_minioff, .subforum_miniofflock, .subforum_miniofflink {color: #333 !important;}
+.subforum_minioff, .subforum_minioffclose, .subforum_miniofflink {color: #333 !important;}
 .subforum_minioff {opacity: .4 !important;}
-/*.subforum_miniofflock i:before {content: "";}*/
+/*.subforum_minioffclose i:before {content: "";}*/
 /*.subforum_miniofflink i:before {content: "";}*/
 .forum_legend, .forum_legend dt, .forum_legend dd {margin: 0 !important;padding: 0 !important;}
 .forum_legend dd {float: left !important;margin-right: 10px !important;margin-top: 17px !important;}
@@ -183,8 +183,8 @@ if(!defined("IN_MYBB"))
     <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
     <dd>{\$lang->no_new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_offlock\" title=\"{\$lang->forum_locked}\"><i class=\"fa fa-lock\"></i></div></dt>
-    <dd>{\$lang->forum_locked}</dd>
+    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fa fa-lock\"></i></div></dt>
+    <dd>{\$lang->forum_closed}</dd>
 
     <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fa fa-link\"></i></div></dt>
     <dd>{\$lang->forum_redirect}</dd>
@@ -200,8 +200,8 @@ if(!defined("IN_MYBB"))
 	<dt><span class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"></span></dt>
 	<dd>{\$lang->no_new_posts}</dd>
 
-	<dt><span class=\"forum_status forum_offlock\" title=\"{\$lang->forum_locked}\"></span></dt>
-	<dd>{\$lang->forum_locked}</dd>
+	<dt><span class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"></span></dt>
+	<dd>{\$lang->forum_closed}</dd>
 
 	<dt><span class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"></span></dt>
 	<dd>{\$lang->forum_redirect}</dd>
