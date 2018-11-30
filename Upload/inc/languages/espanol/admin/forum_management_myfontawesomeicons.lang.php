@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.1
+ * Plugin Version: 1.2
  * 
  */
 
@@ -19,7 +19,7 @@ $l['myfontawesomeicons_Desc'] = 'Le permite implementar iconos personalizados Fo
 $l['myfontawesomeicons_Web'] = 'http://community.mybb.com/user-6029.html';
 $l['myfontawesomeicons_Auth'] = 'Ethan DeLong & Vintagedaddyo';
 $l['myfontawesomeicons_AuthSite'] = 'http://community.mybb.com/user-6029.html';
-$l['myfontawesomeicons_Ver'] = '1.1';
+$l['myfontawesomeicons_Ver'] = '1.2';
 $l['myfontawesomeicons_GUID'] = '';
 $l['myfontawesomeicons_Compat'] = '18*';
  
@@ -31,6 +31,6 @@ $l['myfontawesomeicons_desc'] = "Configuraciones para MyFontAwesomeIcons.";
 // Forum Management
 
 $l['myfontawesomeicons_forum_icons'] = "Fuente Awesome Icon";
-$l['myfontawesomeicons_forum_icons_desc'] = "El nombre CSS para el ícono impresionante de la fuente. Por ejemplo: fa-comments";
+$l['myfontawesomeicons_forum_icons_desc'] = "El nombre CSS para el ícono impresionante de la fuente. Por ejemplo: fas fa-comments";
 
 ?>

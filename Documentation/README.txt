@@ -1,4 +1,4 @@
-MyFontAwesomeIcons (Font Awesome 5)
+MyFontAwesomeIcons
 
 Lets you implement custom Font-Awesome icons for your forums.
 

@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.1
+ * Plugin Version: 1.2
  *
  */
 
@@ -80,7 +80,7 @@ if(!defined("IN_MYBB"))
         $old2 = "<div title=\"{\$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"></div>";
         $new2 = "<div title=\"{$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
         find_replace_templatesets("forumbit_depth3_statusicon", "#".preg_quote($old2)."#i", "$new2");
-        find_replace_templatesets("headerinclude", '#{\$stylesheets}(\r?)\n#', "{\$stylesheets}\n<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\">\n");
+        find_replace_templatesets("headerinclude", '#{\$stylesheets}(\r?)\n#', "{\$stylesheets}\n<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome-5/css/all.css\" rel=\"stylesheet\" type=\"text/css\">\n");
 
 
         $old3 = "{$boardstats}
@@ -103,16 +103,16 @@ if(!defined("IN_MYBB"))
         $new3 = "{$boardstats}
 
 <dl class=\"forum_legend smalltext\">
-    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
+    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
     <dd>{\$lang->new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
+    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
     <dd>{\$lang->no_new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fa fa-lock\"></i></div></dt>
+    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fas fa-lock\"></i></div></dt>
     <dd>{\$lang->forum_closed}</dd>
 
-    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fa fa-link\"></i></div></dt>
+    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fas fa-link\"></i></div></dt>
     <dd>{\$lang->forum_redirect}</dd>
 </dl>
 <br class=\"clear\" />";
@@ -171,27 +171,27 @@ if(!defined("IN_MYBB"))
         $new2 = "<div title=\"{\$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"></div>";
         $old2 = "<div title=\"{$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
         find_replace_templatesets("forumbit_depth3_statusicon", "#".preg_quote($old2)."#i", "$new2");
-        find_replace_templatesets("headerinclude", '#<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\">(\r?)\n#', "", 0);
+        find_replace_templatesets("headerinclude", '#<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome-5/css/all.css\" rel=\"stylesheet\" type=\"text/css\">(\r?)\n#', "", 0);
 
 
-        $old3 = "{$boardstats}
+        $old4 = "{$boardstats}
 
 <dl class=\"forum_legend smalltext\">
-    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
+    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
     <dd>{\$lang->new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fa fa-comments\"></i></div></dt>
+    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
     <dd>{\$lang->no_new_posts}</dd>
 
-    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fa fa-lock\"></i></div></dt>
+    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fas fa-lock\"></i></div></dt>
     <dd>{\$lang->forum_closed}</dd>
 
-    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fa fa-link\"></i></div></dt>
+    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fas fa-link\"></i></div></dt>
     <dd>{\$lang->forum_redirect}</dd>
  </dl>
 <br class=\"clear\" />";
 
-        $new3 = "{$boardstats}
+        $new4 = "{$boardstats}
 
 <dl class=\"forum_legend smalltext\">
 	<dt><span class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"></span></dt>
@@ -207,7 +207,7 @@ if(!defined("IN_MYBB"))
 	<dd>{\$lang->forum_redirect}</dd>
 </dl>
 <br class=\"clear\" />";
-        find_replace_templatesets("index", "#".preg_quote($old3)."#i", "$new3");
+        find_replace_templatesets("index", "#".preg_quote($old4)."#i", "$new4");
 
     	global $db;
 
@@ -229,7 +229,7 @@ if(!defined("IN_MYBB"))
 		if(!empty($forum['myfontawesomeicons_icon']))
 		{
 			$icon_path = str_replace("{theme}", $theme['imgdir'], $forum['myfontawesomeicons_icon']);
-			$forum['myfontawesomeicon'] = htmlspecialchars_uni("fa {$icon_path}");
+			$forum['myfontawesomeicon'] = htmlspecialchars_uni("{$icon_path}");
 		}
 		return $forum;
 	}
