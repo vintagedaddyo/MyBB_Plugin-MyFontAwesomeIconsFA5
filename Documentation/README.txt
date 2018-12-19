@@ -29,7 +29,12 @@ What is new in version 1.2?
 - Font Awesome upgrade from 4.7 to FA5
 - input changed from previous example: fa-comments to fas, far, fab for example: fas fa-comments or far fa-comments or fab fa-discord etc, etc.
 
-* Note: as of late I noticed that the index legend doesn't install correctly..., to temporarily fix this until I can sort out why it stopped working, please try the following:
+
+To Install:
+
+1) Upload The Files, And Go to Admin CP And Activate it!
+
+2) Edit Index template:
 
 Home » Template Sets » Default Templates » Edit Template: index
 
@@ -71,3 +76,11 @@ replace with:
   <dd>{$lang->forum_redirect}</dd>
 </dl>
 <br class="clear" />
+
+
+
+3) Go to forums Management Edit Forum Settings and edit each forum with your specific Font Awesome Icon.
+
+The CSS name for the font awesome icon. For example: fas fa-comments
+
+You can specify a css name to your forum's custom font-awesome icon by going to the ACP => Forum Management => Edit Forum.

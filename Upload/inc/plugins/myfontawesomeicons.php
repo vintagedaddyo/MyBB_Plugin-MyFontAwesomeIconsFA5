@@ -20,11 +20,13 @@ if(!defined("IN_MYBB"))
 }
 
 	// Admin settings injection
+
 	$plugins->add_hook("admin_formcontainer_output_row", "myfontawesomeicons_admin_settings");
 	$plugins->add_hook("admin_forum_management_add_commit", "myfontawesomeicons_admin_settings_save");
 	$plugins->add_hook("admin_forum_management_edit", "myfontawesomeicons_admin_settings_save");
 
 	// Inject creation of forum row.
+
 	$plugins->add_hook("build_forumbits_forum", "myfontawesomeicons_display_icons");
 
 
@@ -55,69 +57,42 @@ if(!defined("IN_MYBB"))
 	function myfontawesomeicons_install()
 	{
 		global $db;
+
 		$db->add_column('forums', 'myfontawesomeicons_icon', 'TEXT NOT NULL');
 	}
 
 	function myfontawesomeicons_is_installed()
 	{
 		global $db;
+
 		return $db->field_exists('myfontawesomeicons_icon', 'forums');
 	}
 
 	function myfontawesomeicons_uninstall()
 	{
 		global $db;
+
 		$db->drop_column('forums', 'myfontawesomeicons_icon');
 	}
 
 	function myfontawesomeicons_activate()
     {
         require_once MYBB_ROOT."inc/adminfunctions_templates.php";
+
         $old1 = "<span class=\"forum_status forum_{\$lightbulb['folder']} ajax_mark_read\" title=\"{\$lightbulb['altonoff']}\" id=\"mark_read_{\$forum['fid']}\"></span>";
+
         $new1 = "<div class=\"forum_status forum_{\$lightbulb['folder']} ajax_mark_read\" title=\"{\$lightbulb['altonoff']}\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
+
         find_replace_templatesets("forumbit_depth2_forum", "#".preg_quote($old1)."#i", "$new1");
         find_replace_templatesets("forumbit_depth2_cat", "#".preg_quote($old1)."#i", "$new1");
+
         $old2 = "<div title=\"{\$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"></div>";
+
         $new2 = "<div title=\"{$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
+
         find_replace_templatesets("forumbit_depth3_statusicon", "#".preg_quote($old2)."#i", "$new2");
+
         find_replace_templatesets("headerinclude", '#{\$stylesheets}(\r?)\n#', "{\$stylesheets}\n<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome-5/css/all.css\" rel=\"stylesheet\" type=\"text/css\">\n");
-
-
-        $old3 = "{$boardstats}
-
-<dl class=\"forum_legend smalltext\">
-	<dt><span class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"></span></dt>
-	<dd>{\$lang->new_posts}</dd>
-
-	<dt><span class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"></span></dt>
-	<dd>{\$lang->no_new_posts}</dd>
-
-	<dt><span class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"></span></dt>
-	<dd>{\$lang->forum_closed}</dd>
-
-	<dt><span class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"></span></dt>
-	<dd>{\$lang->forum_redirect}</dd>
-</dl>
-<br class=\"clear\" />";
-
-        $new3 = "{$boardstats}
-
-<dl class=\"forum_legend smalltext\">
-    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
-    <dd>{\$lang->new_posts}</dd>
-
-    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
-    <dd>{\$lang->no_new_posts}</dd>
-
-    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fas fa-lock\"></i></div></dt>
-    <dd>{\$lang->forum_closed}</dd>
-
-    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fas fa-link\"></i></div></dt>
-    <dd>{\$lang->forum_redirect}</dd>
-</dl>
-<br class=\"clear\" />";
-        find_replace_templatesets("index", "#".preg_quote($old3)."#i", "$new3");
-
 
 
 		global $db;
@@ -149,12 +124,15 @@ if(!defined("IN_MYBB"))
     );
 
     $sid = $db->insert_query('themestylesheets', $new_stylesheet);
+
     $db->update_query('themestylesheets', array('cachefile' => "css.php?stylesheet={$sid}"), "sid='{$sid}'", 1);
 
     $query = $db->simple_select('themes', 'tid');
+
     while($theme = $db->fetch_array($query))
     {
         require_once MYBB_ADMIN_DIR.'inc/functions_themes.php';
+
         update_theme_stylesheet_list($theme['tid']);
     }
 
@@ -164,59 +142,32 @@ if(!defined("IN_MYBB"))
     function myfontawesomeicons_deactivate()
     {
         require_once MYBB_ROOT."inc/adminfunctions_templates.php";
+
         $new1 = "<span class=\"forum_status forum_{\$lightbulb['folder']} ajax_mark_read\" title=\"{\$lightbulb['altonoff']}\" id=\"mark_read_{\$forum['fid']}\"></span>";
+
         $old1 = "<div class=\"forum_status forum_{\$lightbulb['folder']} ajax_mark_read\" title=\"{\$lightbulb['altonoff']}\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
+
         find_replace_templatesets("forumbit_depth2_forum", "#".preg_quote($old1)."#i", "$new1");
         find_replace_templatesets("forumbit_depth2_cat", "#".preg_quote($old1)."#i", "$new1");
+
         $new2 = "<div title=\"{\$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"></div>";
+
         $old2 = "<div title=\"{$lightbulb['altonoff']}\" class=\"subforumicon subforum_{\$lightbulb['folder']} ajax_mark_read\" id=\"mark_read_{\$forum['fid']}\"><i class=\"{\$forum['myfontawesomeicon']}\"></i></div>";
+
         find_replace_templatesets("forumbit_depth3_statusicon", "#".preg_quote($old2)."#i", "$new2");
+
         find_replace_templatesets("headerinclude", '#<link href=\"{\$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome-5/css/all.css\" rel=\"stylesheet\" type=\"text/css\">(\r?)\n#', "", 0);
-
-
-        $old4 = "{$boardstats}
-
-<dl class=\"forum_legend smalltext\">
-    <dt><div class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
-    <dd>{\$lang->new_posts}</dd>
-
-    <dt><div class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"><i class=\"fas fa-comments\"></i></div></dt>
-    <dd>{\$lang->no_new_posts}</dd>
-
-    <dt><div class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"><i class=\"fas fa-lock\"></i></div></dt>
-    <dd>{\$lang->forum_closed}</dd>
-
-    <dt><div class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"><i class=\"fas fa-link\"></i></div></dt>
-    <dd>{\$lang->forum_redirect}</dd>
- </dl>
-<br class=\"clear\" />";
-
-        $new4 = "{$boardstats}
-
-<dl class=\"forum_legend smalltext\">
-	<dt><span class=\"forum_status forum_on\" title=\"{\$lang->new_posts}\"></span></dt>
-	<dd>{\$lang->new_posts}</dd>
-
-	<dt><span class=\"forum_status forum_off\" title=\"{\$lang->no_new_posts}\"></span></dt>
-	<dd>{\$lang->no_new_posts}</dd>
-
-	<dt><span class=\"forum_status forum_offclose\" title=\"{\$lang->forum_closed}\"></span></dt>
-	<dd>{\$lang->forum_closed}</dd>
-
-	<dt><span class=\"forum_status forum_offlink\" title=\"{\$lang->forum_redirect}\"></span></dt>
-	<dd>{\$lang->forum_redirect}</dd>
-</dl>
-<br class=\"clear\" />";
-        find_replace_templatesets("index", "#".preg_quote($old4)."#i", "$new4");
 
     	global $db;
 
     $db->delete_query('themestylesheets', "name='myfontawesomeicons.css'");
 
     $query = $db->simple_select('themes', 'tid');
+
     while($theme = $db->fetch_array($query))
     {
         require_once MYBB_ADMIN_DIR.'inc/functions_themes.php';
+
         update_theme_stylesheet_list($theme['tid']);
     }
 
@@ -226,11 +177,14 @@ if(!defined("IN_MYBB"))
 	function myfontawesomeicons_display_icons($forum)
 	{
 		global $theme;
+
 		if(!empty($forum['myfontawesomeicons_icon']))
 		{
 			$icon_path = str_replace("{theme}", $theme['imgdir'], $forum['myfontawesomeicons_icon']);
+
 			$forum['myfontawesomeicon'] = htmlspecialchars_uni("{$icon_path}");
 		}
+
 		return $forum;
 	}
 
@@ -245,6 +199,7 @@ if(!defined("IN_MYBB"))
 			if($pluginargs['title'] == $lang->display_order)
 			{
 				$lang->load('forum_management_myfontawesomeicons');
+                
 				$form_container->output_row($lang->myfontawesomeicons_forum_icons, $lang->myfontawesomeicons_forum_icons_desc, $form->generate_text_box('myfontawesomeicons_icon', $forum_data['myfontawesomeicons_icon'], array('id' => 'myfontawesomeicons_icon')));
 			}
 		}
