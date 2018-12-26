@@ -54,12 +54,16 @@ if(!defined("IN_MYBB"))
     );
     }
 
-	function myfontawesomeicons_install()
-	{
-		global $db;
+    function myfontawesomeicons_install()
+    {
+        global $db;
+        
+  //    $db->add_column('forums', 'myfontawesomeicons_icon', 'TEXT NOT NULL');
 
-		$db->add_column('forums', 'myfontawesomeicons_icon', 'TEXT NOT NULL');
-	}
+        // Define an initial default icon
+
+        $db->add_column('forums', 'myfontawesomeicons_icon', 'varchar(25) DEFAULT "fas fa-comments"');
+    }
 
 	function myfontawesomeicons_is_installed()
 	{
