@@ -14,8 +14,8 @@
 
 // MyFontAwesomeIcons_plugin_info
 
-$l['myfontawesomeicons_Name'] = 'MyFontAwesomeIcons';
-$l['myfontawesomeicons_Desc'] = 'Le permite implementar iconos personalizados Font-Awesome para sus foros.';
+$l['myfontawesomeicons_Name'] = 'MyFontAwesomeIcons FA5';
+$l['myfontawesomeicons_Desc'] = 'Le permite implementar iconos personalizados Font-Awesome 5 para sus foros.';
 $l['myfontawesomeicons_Web'] = 'http://community.mybb.com/user-6029.html';
 $l['myfontawesomeicons_Auth'] = 'Ethan DeLong & Vintagedaddyo';
 $l['myfontawesomeicons_AuthSite'] = 'http://community.mybb.com/user-6029.html';
