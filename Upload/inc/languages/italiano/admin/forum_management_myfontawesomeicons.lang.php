@@ -16,9 +16,9 @@
 
 $l['myfontawesomeicons_Name'] = 'MyFontAwesomeIcons FA5';
 $l['myfontawesomeicons_Desc'] = 'Ti consente di implementare icone personalizzate Font-Awesome 5 per i tuoi forum.';
-$l['myfontawesomeicons_Web'] = 'http://community.mybb.com/user-6029.html';
+$l['myfontawesomeicons_Web'] = 'https://github.com/vintagedaddyo/MyBB_Plugin-MyFontAwesomeIconsFA5';
 $l['myfontawesomeicons_Auth'] = 'Ethan DeLong & Vintagedaddyo';
-$l['myfontawesomeicons_AuthSite'] = 'http://community.mybb.com/user-6029.html';
+$l['myfontawesomeicons_AuthSite'] = 'https://github.com/vintagedaddyo/MyBB_Plugin-MyFontAwesomeIconsFA5';
 $l['myfontawesomeicons_Ver'] = '1.2';
 $l['myfontawesomeicons_GUID'] = '';
 $l['myfontawesomeicons_Compat'] = '18*';
