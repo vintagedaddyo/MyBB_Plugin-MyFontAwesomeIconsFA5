@@ -86,3 +86,40 @@ replace with:
 The CSS name for the font awesome icon. For example: fas fa-comments
 
 You can specify a css name to your forum's custom font-awesome icon by going to the ACP => Forum Management => Edit Forum.
+
+
+Final note for existing themes that have font-awesome already installed:
+If your theme has custom forumbit template modifications ie: forumbit_depth2_cat, forumbit_depth2_forum, forumbit_depth3_statusicon you will need to revert those templates to default before installing the plugin and also remove any other font-awesome include say for example in headerinclude if already present in the theme. if you don't revert them you would have to manually insert the plugin calls.
+
+mainly what you need to find is where to add the plugin calls for example:
+
+In forumbit_depth2_forum & forumbit_depth2_cat & forumbit_depth3_statusicon you would find:
+
+
+id="mark_read_{$forum['fid']}">
+
+
+
+And add this after:
+
+
+<i class="{$forum['myfontawesomeicon']}"></i>
+
+
+In headerinclude template you would also need to make sure that after:
+
+
+{$stylesheets}
+
+
+There is the following include:
+
+<link href="{$mybb->asset_url}/inc/plugins/myfontawesomeicons/font-awesome-5/css/all.css" rel="stylesheet" type="text/css">
+
+
+
+And that your font awesome include in that template or wherever it is included is commented
+
+<!-- -->
+
+out so as to avoid version conflicts.
