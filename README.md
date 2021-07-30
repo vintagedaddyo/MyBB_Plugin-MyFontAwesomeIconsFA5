@@ -19,6 +19,7 @@ You can specify a css name to your forum's custom font-awesome icon by going to 
 
 7/23/20 Changed current font awesome library included to: fontawesome free 5.14.0
 
+7/30/21 Changed current font awesome library included to: fontawesome free 5.15.3
 
 localization support:
 
@@ -31,3 +32,14 @@ localization support:
 -french
 
 -italiano
+
+
+What is new in version 1.2?
+
+- updated css to reflect the past lock to close change
+- Font Awesome upgrade from 4.7 to FA5
+- input changed from previous example: fa-comments to fas, far, fab for example: fas fa-comments or far fa-comments or fab fa-discord etc, etc.
+
+What is new in version 1.3?
+
+- updated font awesome 5 version to 5.15.3

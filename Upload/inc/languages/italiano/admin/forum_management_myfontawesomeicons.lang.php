@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.2
+ * Plugin Version: 1.3
  * 
  */
 
@@ -19,7 +19,7 @@ $l['myfontawesomeicons_Desc'] = 'Ti consente di implementare icone personalizzat
 $l['myfontawesomeicons_Web'] = 'https://github.com/vintagedaddyo/MyBB_Plugin-MyFontAwesomeIconsFA5';
 $l['myfontawesomeicons_Auth'] = 'Ethan DeLong & Vintagedaddyo';
 $l['myfontawesomeicons_AuthSite'] = 'https://github.com/vintagedaddyo/MyBB_Plugin-MyFontAwesomeIconsFA5';
-$l['myfontawesomeicons_Ver'] = '1.2';
+$l['myfontawesomeicons_Ver'] = '1.3';
 $l['myfontawesomeicons_GUID'] = '';
 $l['myfontawesomeicons_Compat'] = '18*';
  
