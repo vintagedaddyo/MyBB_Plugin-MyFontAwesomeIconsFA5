@@ -21,6 +21,9 @@ You can specify a css name to your forum's custom font-awesome icon by going to 
 
 7/30/21 Changed current font awesome library included to: fontawesome free 5.15.3
 
+10/30/21 Changed current font awesome library included to: fontawesome free 5.15.4
+
+
 localization support:
 
 -english 
