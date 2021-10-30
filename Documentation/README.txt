@@ -37,7 +37,10 @@ What is new in version 1.2?
 
 What is new in version 1.3?
 
-- updated font awesome 5 version to 5.15.3
+- updated font awesome 5 version to 5.15.3 (initially)
+
+- updated font awesome 5 version to 5.15.4 (10/30/21)
+
 
 
 To Install:
