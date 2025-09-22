@@ -1,6 +1,6 @@
 <?php
 /*
- * MyBB: MyFontAwesomeIcons
+ * MyBB: MyFontAwesomeIcons FA5
  *
  * File: forum_management_myfontawesomeicons.lang.php
  * 
@@ -30,7 +30,7 @@ $l['myfontawesomeicons_desc'] = "Settings for MyFontAwesomeIcons.";
 
 // Forum Management
 
-$l['myfontawesomeicons_forum_icons'] = "Font Awesome Icon";
-$l['myfontawesomeicons_forum_icons_desc'] = "The CSS name for the font awesome icon. For example: fas fa-comments";
+$l['myfontawesomeicons_forum_icons'] = "Font Awesome 5 Icon";
+$l['myfontawesomeicons_forum_icons_desc'] = "The CSS name for the font awesome 5 icon. For example: fas fa-comments";
 
 ?>
