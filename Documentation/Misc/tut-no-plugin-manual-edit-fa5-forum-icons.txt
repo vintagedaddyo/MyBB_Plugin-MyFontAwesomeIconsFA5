@@ -1,13 +1,13 @@
-[Tutorial] - Font-Awesome 5 Forum Icons - vintagedaddyo - 10-02-2018 **  --> 1/28/22 ( re-shared due to numerous user requests and complaints after I deleted my old tutorials, though this is not the complete forum theme icon replacements tutorials all in one tutorial as that tutorial was huge and this re-share is simply the main/base forum icons to font awesome 5 old tutorial only, now mildly updated to reflect current FA5 version)
+[Tutorial] - Font-Awesome 5 Forum Icons - vintagedaddyo - 10-02-2018 **  --> 1/28/22 ( re-shared due to numerous user requests and complaints after I deleted my old tutorials, though this is not the complete forum theme icon replacements tutorials all in one tutorial as that tutorial was huge and this re-share is simply the main/base forum icons to font awesome 5 old tutorial only, now mildly updated to reflect current FA5 version) - Minor re-visit / edit on: 9-25-25 on MyBB 1.8.39.
 
 
 This here is a Tutorial For mybb to use Font Awesome 5:
 
 
-Font-Awesome 5 Forum Icons on MyBB 1.8.29 + Software
+Font-Awesome 5 Forum Icons on MyBB 1.8.39 + Software
 
 
-Today, we will be giving you a tutorial on how to replace forum icons with Font-Awesome 5 icons. The software of board being used in this tutorial is MyBB 1.8.29. Most of you have seen these type of additions on bulletin board's across the globe, and very much sure some of you would like to have one of these pages of your own. All others are also welcome to help other individuals on this thread who may be having issues, problems, and, errors after or before reading this tutorial. 
+Today, we will be giving you a tutorial on how to replace forum icons with Font-Awesome 5 icons. The software of board being used in this tutorial is MyBB 1.8.39. Most of you have seen these type of additions on bulletin board's across the globe, and very much sure some of you would like to have one of these pages of your own. All others are also welcome to help other individuals on this thread who may be having issues, problems, and, errors after or before reading this tutorial. 
 
 1. Loading Font Awesome 5
 
@@ -34,9 +34,24 @@ Internal linking:
 <link rel="stylesheet" href="{$mybb->asset_url}/font-awesome-5/css/all.css">
 
 
-* You can download Fontawesome5 pkg stripped down for size to be used for theme includes here:
 
-https://filetransfer.io/data-package/vShTkNP0#link
+You can download font-awesome-5 pkg stripped down for size to be used for theme includes here:
+
+
+https://www.file-upload.net/en/download-15535580/font-awesome-5.zip.html
+
+
+Else, you can download the entire Font Awesome 5 package:
+
+
+https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-web.zip *
+
+
+
+* for example and then extract that poackage and copy the following directories out of such ie: "css & webfonts"
+
+and place those into a newly created directory called: font-awesome-6 Hopefully that makes sense. :) Best of Luck!
+
 
 
 2. Adding Your Icon
